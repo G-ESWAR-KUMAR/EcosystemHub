@@ -45,7 +45,7 @@ export function EcosystemHero({
             className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 font-syne font-bold text-xs transition-all shadow-sm active:scale-95"
           >
             <Ticket className="size-3.5 text-rose-600" />
-            <span>Book Tickets</span>
+            <span>Ticketing Website</span>
           </button>
 
           <button
@@ -113,7 +113,7 @@ export function EcosystemHero({
             className="px-7 py-3.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-syne font-bold text-xs tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-2"
           >
             <Ticket className="size-3.5" />
-            <span>True Ticket Booking</span>
+            <span>Visit Ticketing Website</span>
           </button>
 
           <button

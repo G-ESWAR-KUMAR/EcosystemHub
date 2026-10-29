@@ -15,7 +15,7 @@ export function HoverExpandGallery({ sectors, onSelectSector }) {
           <span>Interactive Hover Gallery // 10 Sectors</span>
         </div>
         <span className="text-xs font-mono text-gray-400 hidden sm:inline">
-          Hover to expand • Click to inspect details
+          Hover to expand • Click to visit a sector website
         </span>
       </div>
 
@@ -127,7 +127,7 @@ export function HoverExpandGallery({ sectors, onSelectSector }) {
                     }}
                     className="px-4 py-2 rounded-full bg-white text-gray-900 font-syne font-bold text-xs hover:bg-gray-100 transition-all flex items-center gap-1.5 shadow-lg active:scale-95"
                   >
-                    <span>Explore Sector</span>
+                    <span>Visit Website</span>
                     <ArrowUpRight className="size-3.5" />
                   </button>
                 </div>

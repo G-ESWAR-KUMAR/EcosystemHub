@@ -120,7 +120,7 @@ export function SectorGridCatalog({ sectors, onSelectSector }) {
             <div className="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-mono">
               <span className="text-gray-900 font-bold">{sector.pricing}</span>
               <button className="px-3.5 py-1.5 rounded-full bg-gray-100 group-hover:bg-gray-900 group-hover:text-white transition-colors flex items-center gap-1 text-[11px] font-syne font-semibold">
-                <span>View</span>
+                <span>Visit Website</span>
                 <ArrowUpRight className="size-3" />
               </button>
             </div>

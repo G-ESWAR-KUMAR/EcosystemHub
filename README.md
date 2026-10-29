@@ -19,11 +19,13 @@ Inspired by **Aceternity UI**, **Skiper UI**, and **AnimMasterLib**.
 9. **# 09 Wellness** — Holistic balance for mind, body & breath.
 10. **# 10 Consulting** — Guiding your commercial vision to success.
 
+Selecting RiderBro opens [riderbro.com](https://riderbro.com). Selecting any other sector opens [others.com](https://others.com).
+
 ---
 
 ## 🚀 Quick Start (Development)
 
-Requires **Node.js 18+**:
+Requires **Node.js 20.19+** (or **22.12+**):
 
 ```bash
 # 1. Install dependencies

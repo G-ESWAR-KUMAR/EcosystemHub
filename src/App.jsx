@@ -5,14 +5,10 @@ import { HoverExpandGallery } from './components/HoverExpandGallery';
 import { SectorGridCatalog } from './components/SectorGridCatalog';
 import { HumanConnectionSection } from './components/HumanConnectionSection';
 import { EcosystemFooter } from './components/EcosystemFooter';
-import { SectorModal } from './components/SectorModal';
-import { TicketBookingModal } from './components/TicketBookingModal';
 import { SECTORS } from './data/services';
 import { sounds } from './utils/audio';
 
 export function App() {
-  const [selectedSector, setSelectedSector] = useState(null);
-  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
 
   const handleToggleSound = () => {
@@ -21,12 +17,9 @@ export function App() {
   };
 
   const handleSelectSector = (sector) => {
-    if (sector.id === 'true-ticket-booking') {
-      sounds.playSuccess();
-      setIsTicketModalOpen(true);
-    } else {
-      setSelectedSector(sector);
-    }
+    window.location.assign(
+      sector.id === 'rider-bro' ? 'https://riderbro.com' : 'https://others.com'
+    );
   };
 
   const scrollToGallery = () => {
@@ -59,7 +52,7 @@ export function App() {
           soundEnabled={soundEnabled}
           onToggleSound={handleToggleSound}
           onOpenManifesto={scrollToManifesto}
-          onOpenTicketBooking={() => setIsTicketModalOpen(true)}
+          onOpenTicketBooking={() => window.location.assign('https://others.com')}
         />
 
         {/* HoverExpand Gallery Section (The 10 Sectors Interactive Strip) */}
@@ -86,20 +79,6 @@ export function App() {
         sectors={SECTORS}
         onSelectSector={handleSelectSector}
         onBackToTop={scrollToTop}
-      />
-
-      {/* Sector Deep-Dive Inspection Modal */}
-      {selectedSector && (
-        <SectorModal 
-          sector={selectedSector}
-          onClose={() => setSelectedSector(null)}
-        />
-      )}
-
-      {/* Interactive True Ticket Booking Engine Modal */}
-      <TicketBookingModal
-        isOpen={isTicketModalOpen}
-        onClose={() => setIsTicketModalOpen(false)}
       />
 
     </div>

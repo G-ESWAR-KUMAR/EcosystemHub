@@ -107,8 +107,8 @@
       <div class="text-2xl font-bold font-syne tracking-tight text-gray-900">Ecosystem<span class="text-[#8c6d46]">.</span></div>
     </div>
     <div class="flex items-center gap-3">
-      <button onclick="openTicketModal()" class="px-4 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 font-syne font-bold text-xs transition-all shadow-sm">
-        🎟️ Book Tickets
+      <button onclick="window.location.assign('https://others.com')" class="px-4 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 font-syne font-bold text-xs transition-all shadow-sm">
+        🎟️ Ticketing Website
       </button>
       <span class="text-xs font-mono tracking-widest uppercase text-gray-500 hidden sm:inline">Global Hub</span>
     </div>
@@ -129,8 +129,8 @@
       <button onclick="document.getElementById('gallery-container').scrollIntoView({behavior: 'smooth'})" class="px-8 py-3.5 rounded-full bg-gray-900 text-white font-syne font-bold text-xs tracking-wider hover:bg-black transition-all shadow-lg">
         Explore 10 Sectors ↓
       </button>
-      <button onclick="openTicketModal()" class="px-7 py-3.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-syne font-bold text-xs tracking-wider transition-all shadow-md">
-        🎟️ True Ticket Booking
+      <button onclick="window.location.assign('https://others.com')" class="px-7 py-3.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-syne font-bold text-xs tracking-wider transition-all shadow-md">
+        🎟️ Visit Ticketing Website
       </button>
     </div>
   </header>
@@ -400,7 +400,7 @@
           <h3 class="text-white text-3xl font-extrabold font-syne mb-1">${sector.name}</h3>
           <p class="text-white/90 text-sm font-light leading-snug mb-4">${sector.desc}</p>
           <button onclick="handleSectorAction(${index})" class="self-start px-4 py-1.5 rounded-full bg-white text-gray-900 font-syne font-bold text-xs hover:bg-gray-100 transition-colors shadow-md">
-            ${index === 9 ? 'Book True Ticket 🎟️' : 'Inspect Sector ↗'}
+            Visit Website ↗
           </button>
         </div>
       `;
@@ -417,11 +417,9 @@
     });
 
     function handleSectorAction(idx) {
-      if (idx === 9) {
-        openTicketModal();
-      } else {
-        openModal(idx);
-      }
+      window.location.assign(
+        sectors[idx].name === 'RiderBro' ? 'https://riderbro.com' : 'https://others.com'
+      );
     }
 
     function openModal(idx) {
