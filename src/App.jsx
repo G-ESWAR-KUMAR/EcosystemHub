@@ -6,16 +6,27 @@ import { SectorGridCatalog } from './components/SectorGridCatalog';
 import { HumanConnectionSection } from './components/HumanConnectionSection';
 import { EcosystemFooter } from './components/EcosystemFooter';
 import { SectorModal } from './components/SectorModal';
+import { TicketBookingModal } from './components/TicketBookingModal';
 import { SECTORS } from './data/services';
 import { sounds } from './utils/audio';
 
 export function App() {
   const [selectedSector, setSelectedSector] = useState(null);
+  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
 
   const handleToggleSound = () => {
     const newState = sounds.toggle();
     setSoundEnabled(newState);
+  };
+
+  const handleSelectSector = (sector) => {
+    if (sector.id === 'true-ticket-booking') {
+      sounds.playSuccess();
+      setIsTicketModalOpen(true);
+    } else {
+      setSelectedSector(sector);
+    }
   };
 
   const scrollToGallery = () => {
@@ -48,20 +59,21 @@ export function App() {
           soundEnabled={soundEnabled}
           onToggleSound={handleToggleSound}
           onOpenManifesto={scrollToManifesto}
+          onOpenTicketBooking={() => setIsTicketModalOpen(true)}
         />
 
         {/* HoverExpand Gallery Section (The 10 Sectors Interactive Strip) */}
         <section id="gallery-section" className="py-6">
           <HoverExpandGallery 
             sectors={SECTORS}
-            onSelectSector={(sector) => setSelectedSector(sector)}
+            onSelectSector={handleSelectSector}
           />
         </section>
 
         {/* Complete Directory Index with Category Filters & Search */}
         <SectorGridCatalog 
           sectors={SECTORS}
-          onSelectSector={(sector) => setSelectedSector(sector)}
+          onSelectSector={handleSelectSector}
         />
 
         {/* Rooted in Connection Manifesto & Concierge Desk */}
@@ -72,7 +84,7 @@ export function App() {
       {/* Elevated Living Footer */}
       <EcosystemFooter 
         sectors={SECTORS}
-        onSelectSector={(sector) => setSelectedSector(sector)}
+        onSelectSector={handleSelectSector}
         onBackToTop={scrollToTop}
       />
 
@@ -83,6 +95,12 @@ export function App() {
           onClose={() => setSelectedSector(null)}
         />
       )}
+
+      {/* Interactive True Ticket Booking Engine Modal */}
+      <TicketBookingModal
+        isOpen={isTicketModalOpen}
+        onClose={() => setIsTicketModalOpen(false)}
+      />
 
     </div>
   );

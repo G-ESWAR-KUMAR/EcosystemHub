@@ -23,7 +23,7 @@ Inspired by **Aceternity UI**, **Skiper UI**, and **AnimMasterLib**.
 
 ## 🚀 Quick Start (Development)
 
-Requires **Node.js 20.19+** (or **22.12+**):
+Requires **Node.js 18+**:
 
 ```bash
 # 1. Install dependencies

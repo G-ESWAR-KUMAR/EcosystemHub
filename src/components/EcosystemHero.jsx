@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { ArrowDown, Sparkles, Heart, Compass, Volume2, VolumeX } from 'lucide-react';
+import { ArrowDown, Sparkles, Heart, Compass, Volume2, VolumeX, Ticket } from 'lucide-react';
 import { sounds } from '../utils/audio';
 
 export function EcosystemHero({ 
   onExploreClick, 
   soundEnabled, 
   onToggleSound, 
-  onOpenManifesto 
+  onOpenManifesto,
+  onOpenTicketBooking 
 }) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -34,7 +35,19 @@ export function EcosystemHero({
           </span>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
+          {/* Quick True Ticket Booking Nav Pill */}
+          <button
+            onClick={() => {
+              sounds.playSuccess();
+              onOpenTicketBooking();
+            }}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 font-syne font-bold text-xs transition-all shadow-sm active:scale-95"
+          >
+            <Ticket className="size-3.5 text-rose-600" />
+            <span>Book Tickets</span>
+          </button>
+
           <button
             onClick={onToggleSound}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono transition-all border ${
@@ -45,10 +58,10 @@ export function EcosystemHero({
             title="Toggle Soft Procedural Audio"
           >
             {soundEnabled ? <Volume2 className="size-3.5" /> : <VolumeX className="size-3.5" />}
-            <span className="hidden sm:inline">{soundEnabled ? 'Sound On' : 'Muted'}</span>
+            <span className="hidden sm:inline">{soundEnabled ? 'Audio On' : 'Muted'}</span>
           </button>
 
-          <span className="text-xs font-medium tracking-widest uppercase text-gray-500 font-mono hidden sm:inline">
+          <span className="text-xs font-medium tracking-widest uppercase text-gray-500 font-mono hidden md:inline">
             Global Mother Hub
           </span>
         </div>
@@ -60,7 +73,7 @@ export function EcosystemHero({
         {/* Subtle Heritage Tag */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#e5e3de] text-xs font-mono text-[#8c6d46] shadow-sm mb-6">
           <Sparkles className="size-3" />
-          <span>MOTHER PORTAL // 10 INTEGRATED SECTORS</span>
+          <span>MOTHER PORTAL // 10 CONNECTED DISCIPLINES</span>
         </div>
 
         {/* Hero Title */}
@@ -94,6 +107,17 @@ export function EcosystemHero({
 
           <button
             onClick={() => {
+              sounds.playSuccess();
+              onOpenTicketBooking();
+            }}
+            className="px-7 py-3.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-syne font-bold text-xs tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-2"
+          >
+            <Ticket className="size-3.5" />
+            <span>True Ticket Booking</span>
+          </button>
+
+          <button
+            onClick={() => {
               sounds.playHover();
               onOpenManifesto();
             }}
@@ -112,16 +136,16 @@ export function EcosystemHero({
           <div className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">Living Sectors</div>
         </div>
         <div>
-          <div className="font-syne font-extrabold text-2xl text-[#8c6d46]">100%</div>
+          <div className="font-syne font-extrabold text-2xl text-[#8c6d46]">Sania Silks</div>
+          <div className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">Sector # 01 Heritage</div>
+        </div>
+        <div>
+          <div className="font-syne font-extrabold text-2xl text-rose-600">True Ticket</div>
+          <div className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">Sector # 10 Box Office</div>
+        </div>
+        <div>
+          <div className="font-syne font-extrabold text-2xl text-emerald-700">100%</div>
           <div className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">Human Curated</div>
-        </div>
-        <div>
-          <div className="font-syne font-extrabold text-2xl text-gray-900">Fair-Wage</div>
-          <div className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">Artisan Certified</div>
-        </div>
-        <div>
-          <div className="font-syne font-extrabold text-2xl text-emerald-700">24/7</div>
-          <div className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">Concierge Desk</div>
         </div>
       </div>
 

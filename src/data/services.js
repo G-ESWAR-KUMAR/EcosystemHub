@@ -1,20 +1,20 @@
 export const SECTORS = [
   {
-    id: 'aura-silk',
+    id: 'sania-silks',
     num: '01',
     code: '# 01',
-    name: 'Aura Silk',
+    name: 'Sania Silks',
     category: 'Heritage & Luxury',
-    tagline: 'Premium silk trading with heritage.',
-    img: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1200&q=80',
+    tagline: 'Generations of master weaving & authentic bridal silks.',
+    img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80',
     accent: '#c29d74',
-    shortDesc: 'Generations of master weaving. Hand-spun mulberry silks, heirloom bridal weaves, and raw textured sarees created by generational artisans.',
-    humanTouch: 'Each saree carries the weaver’s signature knot, woven over 140 uninterrupted hours by master craftsmen in Varanasi and Kanchipuram.',
+    shortDesc: 'Generations of authentic handloom artistry. Pure Kanchipuram bridal drapes, Banarasi gold zari weaves, and hand-spun mulberry silks crafted by master weavers.',
+    humanTouch: 'Every Sania Silks saree carries the master artisan’s hallmark knot, hand-loomed over 160 uninterrupted hours with pure tested zari and generational pride.',
     highlights: [
-      'Pure Mulberry & Tussar Silk',
+      'Pure Certified Mulberry & Kanchipuram Silk',
       'Hand-Loomed by Generational Artisans',
-      'Certified Heirloom Quality',
-      'Bespoke Bridal Custom Weaves'
+      'Certified Heirloom Gold Zari Quality',
+      'Bespoke Bridal Trousseau Commissions'
     ],
     pricing: 'From $350 per bespoke drape',
     timing: 'Handcrafted within 12–18 days',
@@ -189,25 +189,25 @@ export const SECTORS = [
     contactPerson: 'Senior Practitioner Dr. Alok Menon'
   },
   {
-    id: 'consulting',
+    id: 'true-ticket-booking',
     num: '10',
     code: '# 10',
-    name: 'Consulting',
-    category: 'Advisory & Growth',
-    tagline: 'Guiding your vision to success.',
-    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
-    accent: '#1e293b',
-    shortDesc: 'Bespoke strategic counsel, brand positioning, and organizational growth for generational enterprises and forward-thinking founders.',
-    humanTouch: 'We take only four advisory clients at any one time, ensuring our partners work directly with senior strategists rather than junior associates.',
+    name: 'True Ticket Booking',
+    category: 'Ticketing & Events',
+    tagline: 'Verified event, concert & stadium ticketing with zero hassle.',
+    img: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
+    accent: '#e11d48',
+    shortDesc: 'Seamless digital ticketing for sports matches, live concerts, cinema, and theatre. 100% verified authentic tickets, instant QR delivery, and zero hidden platform fees.',
+    humanTouch: 'We believe live experiences create lifelong memories. Our ticketing platform guarantees fair-price access with zero predatory markups and instant human customer rescue.',
     highlights: [
-      'Direct Senior Partner Advisory',
-      'Generational Brand Positioning',
-      'Capital & M&A Strategy',
-      'Strict Conflict-of-Interest Firewall'
+      '100% Verified Authentic Digital Passes',
+      'Instant QR Code & Wallet Delivery',
+      'Zero Hidden Convenience Surcharges',
+      'Instant Reschedule & Fair Refund Desk'
     ],
-    pricing: 'Quarterly strategic advisory',
-    timing: 'Selective client onboarding',
-    contactPerson: 'Managing Partner Rohan Mehra'
+    pricing: 'Official Box Office Rates',
+    timing: 'Instant 10-second pass generation',
+    contactPerson: 'Ticketing Concierge Arjun Varma'
   }
 ];
 
@@ -222,5 +222,5 @@ export const CATEGORIES = [
   'Home Care',
   'Sports & Energy',
   'Mind & Body',
-  'Advisory & Growth'
+  'Ticketing & Events'
 ];

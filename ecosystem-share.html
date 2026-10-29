@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecosystem Hub | Human Touch & Elevated Living</title>
-  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       background-color: #f5f4f3;
@@ -42,7 +42,7 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
-      opacity: 0.7;
+      opacity: 0.75;
       transition: opacity 0.4s ease;
     }
     .expand-card.active .expand-overlay {
@@ -106,10 +106,11 @@
       <div class="size-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-syne font-bold text-sm">E</div>
       <div class="text-2xl font-bold font-syne tracking-tight text-gray-900">Ecosystem<span class="text-[#8c6d46]">.</span></div>
     </div>
-    <div class="flex items-center gap-4">
-      <a href="http://localhost:5173/" target="_blank" class="px-4 py-1.5 rounded-full bg-gray-900 text-white font-syne font-bold text-xs hover:bg-black transition-all">
-        Open Live App (Port 5173) ↗
-      </a>
+    <div class="flex items-center gap-3">
+      <button onclick="openTicketModal()" class="px-4 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-rose-700 hover:bg-rose-100 font-syne font-bold text-xs transition-all shadow-sm">
+        🎟️ Book Tickets
+      </button>
+      <span class="text-xs font-mono tracking-widest uppercase text-gray-500 hidden sm:inline">Global Hub</span>
     </div>
   </nav>
 
@@ -121,9 +122,17 @@
     <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gray-900 font-syne">
       Elevated Living<span class="text-[#8c6d46]">.</span>
     </h1>
-    <p class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-2xl">
+    <p class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-2xl mb-8">
       A unified collection of premium services, designed with empathy and built for human connection. Explore our 10 distinct sectors below.
     </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <button onclick="document.getElementById('gallery-container').scrollIntoView({behavior: 'smooth'})" class="px-8 py-3.5 rounded-full bg-gray-900 text-white font-syne font-bold text-xs tracking-wider hover:bg-black transition-all shadow-lg">
+        Explore 10 Sectors ↓
+      </button>
+      <button onclick="openTicketModal()" class="px-7 py-3.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-syne font-bold text-xs tracking-wider transition-all shadow-md">
+        🎟️ True Ticket Booking
+      </button>
+    </div>
   </header>
 
   <!-- HoverExpand Gallery Section -->
@@ -131,29 +140,245 @@
     <div class="expand-container" id="gallery-container"></div>
   </main>
 
+  <!-- Rooted in Connection Section -->
+  <section class="max-w-4xl mx-auto px-4 py-16 text-center border-t border-[#e5e3de]">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#e5e3de] text-xs font-mono text-[#8c6d46] mb-4 shadow-sm">
+      OUR CORE PHILOSOPHY
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-extrabold font-syne text-gray-900 mb-4">Rooted in Connection</h2>
+    <p class="text-gray-600 font-light leading-relaxed mb-10 max-w-2xl mx-auto text-base">
+      We believe that true luxury lies in empathy. Every service in our ecosystem is meticulously crafted not just to perform a function, but to foster genuine human connections.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+      <div class="p-6 rounded-2xl bg-white border border-[#e5e3de] shadow-sm">
+        <div class="text-[#8c6d46] font-syne font-bold text-lg mb-2">01. Empathetic Curation</div>
+        <p class="text-xs text-gray-600 leading-relaxed">From Sania Silks generational handlooms to True Ticket box office passes, every service is curated with human dignity.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border border-[#e5e3de] shadow-sm">
+        <div class="text-[#8c6d46] font-syne font-bold text-lg mb-2">02. Heritage & Dignity</div>
+        <p class="text-xs text-gray-600 leading-relaxed">Certified master weavers, fair-wage household sanctums, and verified authentic ticket passes with zero markups.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border border-[#e5e3de] shadow-sm">
+        <div class="text-[#8c6d46] font-syne font-bold text-lg mb-2">03. Human Concierge</div>
+        <p class="text-xs text-gray-600 leading-relaxed">Zero bot queues. Every inquiry connects directly to dedicated human sector directors.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="mt-20 py-16 text-center px-4 border-t border-[#e5e3de] bg-[#f8f7f5] select-none">
+  <footer class="mt-12 py-12 text-center px-4 border-t border-[#e5e3de] bg-[#f8f7f5] select-none">
     <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-extrabold font-syne mb-4 text-gray-900">Rooted in Connection</h2>
-      <p class="text-gray-500 font-light leading-relaxed mb-8 text-sm sm:text-base">
-        We believe that true luxury lies in empathy. Every service in our ecosystem is meticulously crafted not just to perform a function, but to foster genuine human connections.
-      </p>
-      <p class="text-xs text-gray-400 font-mono tracking-widest uppercase">&copy; 2026 Ecosystem Global Hub</p>
+      <div class="flex items-center justify-center gap-2 mb-3">
+        <div class="size-5 rounded-full bg-gray-900 text-white flex items-center justify-center font-syne font-bold text-[10px]">E</div>
+        <span class="font-syne font-bold text-sm text-gray-900">Ecosystem Hub</span>
+      </div>
+      <p class="text-xs text-gray-400 font-mono tracking-widest uppercase">&copy; 2026 Ecosystem Global Hub. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Sector Modal Drawer -->
+  <div id="modal-backdrop" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
+      <button onclick="closeModal()" class="absolute top-5 right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">✕</button>
+      <div class="relative h-48 rounded-2xl overflow-hidden mb-4">
+        <img id="modal-img" src="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 text-white">
+          <span id="modal-code" class="text-xs font-mono px-2 py-0.5 rounded bg-white/20"></span>
+          <h3 id="modal-title" class="text-2xl font-bold font-syne mt-1"></h3>
+        </div>
+      </div>
+      <p id="modal-tagline" class="text-xs font-mono text-[#8c6d46] mb-3"></p>
+      <p id="modal-desc" class="text-sm text-gray-700 leading-relaxed mb-4"></p>
+      <div class="p-4 rounded-xl bg-[#f5f4f0] border border-[#e8e6e1] mb-5">
+        <div class="text-[11px] font-mono font-bold text-[#8c6d46] uppercase mb-1">Human Touch Commitment</div>
+        <p id="modal-touch" class="text-xs text-gray-800 leading-relaxed font-light"></p>
+      </div>
+      <div class="flex justify-between items-center pt-3 border-t border-gray-100 text-xs font-mono">
+        <span id="modal-pricing" class="font-bold text-gray-900"></span>
+        <button onclick="alert('Inquiry received! Our sector concierge will reach out to you shortly.')" class="px-5 py-2 rounded-full bg-gray-900 text-white font-syne font-bold hover:bg-black transition-all">
+          Connect with Director ↗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- True Ticket Booking Modal -->
+  <div id="ticket-modal-backdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-[#fdfcfb] rounded-3xl max-w-xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl border border-gray-200">
+      <button onclick="closeTicketModal()" class="absolute top-5 right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">✕</button>
+      
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+        <div class="size-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-lg">🎟️</div>
+        <div>
+          <h3 class="font-syne text-2xl font-extrabold text-gray-900">True Ticket Booking</h3>
+          <p class="text-xs text-gray-500 font-mono">Sector # 10 • Verified Admission Box Office</p>
+        </div>
+      </div>
+
+      <div id="ticket-form-view" class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono font-bold text-gray-700 mb-1">Select Event / Experience</label>
+          <select id="tk-event" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-sans bg-white">
+            <option value="FIFA Floodlit Match Night|$35">FIFA Floodlit Match Night — $35 / pass</option>
+            <option value="Sania Silks Master Heritage Exhibition|$25">Sania Silks Master Heritage Exhibition — $25 / pass</option>
+            <option value="Acoustic Vinyl Night at Artisan Cafe|$20">Acoustic Vinyl Night at Artisan Cafe — $20 / pass</option>
+            <option value="RiderBro Coastal Trail Pass|$120">RiderBro Coastal Trail Pass — $120 / pass</option>
+            <option value="Sunset Tibetan Sound Bath|$75">Sunset Tibetan Sound Bath — $75 / pass</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-mono font-bold text-gray-700 mb-1">Booking Date</label>
+            <input type="date" value="2026-11-04" class="w-full px-3 py-2 rounded-xl border border-gray-200 text-xs font-mono bg-white" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono font-bold text-gray-700 mb-1">Admission Tier</label>
+            <select class="w-full px-3 py-2 rounded-xl border border-gray-200 text-xs font-mono bg-white">
+              <option>Standard Pass</option>
+              <option selected>Premium Pass (+30%)</option>
+              <option>VIP Backstage (+80%)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-mono font-bold text-gray-700 mb-1">Lead Guest Name</label>
+            <input id="tk-name" type="text" placeholder="e.g. Aryan Mehra" class="w-full px-4 py-2 rounded-xl border border-gray-200 text-xs bg-white" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono font-bold text-gray-700 mb-1">WhatsApp / Phone</label>
+            <input id="tk-phone" type="text" placeholder="+91 98765 43210" class="w-full px-4 py-2 rounded-xl border border-gray-200 text-xs bg-white" />
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-gray-200 flex justify-between items-center">
+          <div>
+            <div class="text-[10px] font-mono text-gray-500">Zero Hidden Convenience Surcharge</div>
+            <div class="text-sm font-bold font-syne text-emerald-700">100% Guaranteed Pass Issuance</div>
+          </div>
+          <button onclick="confirmBooking()" class="px-6 py-3 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-syne font-bold text-xs tracking-wider transition-all shadow-md">
+            Issue True Ticket 🎟️
+          </button>
+        </div>
+      </div>
+
+      <div id="ticket-success-view" class="hidden space-y-4">
+        <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium">
+          ✓ True Ticket Issued! Reference: <strong id="tk-ref"></strong>
+        </div>
+        <div class="rounded-2xl border border-gray-200 p-5 bg-white shadow-md">
+          <div class="text-[10px] font-mono text-rose-600 font-bold tracking-widest">TRUE TICKET PASS</div>
+          <h4 id="tk-res-event" class="text-xl font-bold font-syne mt-1"></h4>
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono text-gray-600 mt-3 pt-3 border-t border-dashed border-gray-200">
+            <div>GUEST: <strong id="tk-res-name" class="text-gray-900"></strong></div>
+            <div>STATUS: <strong class="text-emerald-700">CONFIRMED</strong></div>
+            <div>DATE: <strong>Nov 04, 2026</strong></div>
+            <div>ENTRY: <strong>19:00 PM</strong></div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between">
+            <div class="text-xs font-mono text-gray-500">Show QR at Gate</div>
+            <div class="font-mono text-xs font-bold px-3 py-1 bg-gray-100 rounded">||||| ||| |||||||</div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center pt-2">
+          <button onclick="window.print()" class="px-5 py-2 rounded-full border border-gray-300 text-xs font-syne font-semibold bg-white">
+            Print Pass
+          </button>
+          <button onclick="resetTicketForm()" class="px-5 py-2 rounded-full bg-gray-900 text-white text-xs font-syne font-bold">
+            Book Another
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <script>
     const sectors = [
-      { name: "Aura Silk", desc: "Premium silk trading with heritage.", img: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80", code: "# 01" },
-      { name: "Matrimony", desc: "Meaningful connections for life.", img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80", code: "# 02" },
-      { name: "Boutique Hotel", desc: "Exquisite stays crafted for comfort.", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80", code: "# 03" },
-      { name: "Artisan Cafe", desc: "Warm brews & conversations.", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80", code: "# 04" },
-      { name: "RiderBro", desc: "Your trusted journey companion.", img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80", code: "# 05" },
-      { name: "Builders", desc: "Architecting dreams into reality.", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80", code: "# 06" },
-      { name: "House Helpers", desc: "Empathetic care for your home.", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80", code: "# 07" },
-      { name: "Turf Booking", desc: "Premium grounds for passion.", img: "https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=800&q=80", code: "# 08" },
-      { name: "Wellness", desc: "Holistic balance for mind & body.", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80", code: "# 09" },
-      { name: "Consulting", desc: "Guiding your vision to success.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80", code: "# 10" }
+      { 
+        name: "Sania Silks", 
+        desc: "Generations of authentic handloom artistry. Pure Kanchipuram bridal drapes, Banarasi gold zari weaves, and hand-spun mulberry silks crafted by master weavers.", 
+        touch: "Every Sania Silks saree carries the master artisan's hallmark knot, hand-loomed over 160 uninterrupted hours with pure tested zari and generational pride.",
+        pricing: "Bespoke bridal weaves",
+        img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80", 
+        code: "# 01" 
+      },
+      { 
+        name: "Matrimony", 
+        desc: "A private matrimonial sanctuary rooted in emotional compatibility, family values, and discreet 1-on-1 matchmaker curation.", 
+        touch: "No cold algorithms or swiping. Every match is curated personally by senior matrimonial directors through in-depth conversations.",
+        pricing: "Private Concierge Membership",
+        img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80", 
+        code: "# 02" 
+      },
+      { 
+        name: "Boutique Hotel", 
+        desc: "Intimate architectural suites, quiet inner courtyards, and warm bespoke hospitality designed for true sensory respite.", 
+        touch: "Fireplaces prepared to your custom scent, with organic night teas harvested directly from the kitchen garden.",
+        pricing: "From $420 / night",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80", 
+        code: "# 03" 
+      },
+      { 
+        name: "Artisan Cafe", 
+        desc: "Micro-batch estate coffee roasts, wild-fermented sourdough pastries, and sun-drenched timber tables built for conversations.", 
+        touch: "Grinders dialed every morning at 6 AM according to humidity to extract the exact floral notes of single-origin beans.",
+        pricing: "Single origin pours from $6",
+        img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80", 
+        code: "# 04" 
+      },
+      { 
+        name: "RiderBro", 
+        desc: "Curated touring motorcycles, road-trip support, and an authentic brotherhood network ensuring safe expeditions across highways.", 
+        touch: "Every motorcycle is inspected alongside the rider before departure, tuning levers to match exact hand reach.",
+        pricing: "Daily expeditions from $75",
+        img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80", 
+        code: "# 05" 
+      },
+      { 
+        name: "Builders", 
+        desc: "Architectural residences and sustainable estates built with natural stone, reclaimed timber, and honest structural integrity.", 
+        touch: "Every home is aligned to the path of the sun and the natural slopes of the landscape, rejecting sterile templates.",
+        pricing: "Bespoke Residential Commissions",
+        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80", 
+        code: "# 06" 
+      },
+      { 
+        name: "House Helpers", 
+        desc: "Dignified household management, trusted culinary care, and compassionate elderly companionship for your domestic sanctuary.", 
+        touch: "Helpers are certified through our human dignity academy, paid fair living wages, and matched on mutual respect.",
+        pricing: "Fair-wage monthly retainers",
+        img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80", 
+        code: "# 07" 
+      },
+      { 
+        name: "Turf Booking", 
+        desc: "FIFA-grade multi-sport astro turfs, shadowless night floodlighting, and seamless pitch scheduling for football and cricket lovers.", 
+        touch: "Brushed turf infill and chilled mist sprinklers after every match to protect athletes' joints.",
+        pricing: "From $35 / hour slot",
+        img: "https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=800&q=80", 
+        code: "# 08" 
+      },
+      { 
+        name: "Wellness", 
+        desc: "Holistic Ayurvedic rejuvenation, guided sound baths, and somatic bodywork restoring inner equilibrium and vital energy.", 
+        touch: "Begins with personal pulse diagnosis and customized herbal oils warmed in terracotta over gentle flame.",
+        pricing: "Sessions from $90",
+        img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80", 
+        code: "# 09" 
+      },
+      { 
+        name: "True Ticket Booking", 
+        desc: "Seamless digital ticketing for sports matches, live concerts, cinema, and theatre. 100% verified authentic tickets, instant QR delivery, and zero hidden platform fees.", 
+        touch: "Live experiences create lifelong memories. Our ticketing platform guarantees fair-price access with zero predatory markups and instant human customer rescue.",
+        pricing: "Official Box Office Rates",
+        img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80", 
+        code: "# 10" 
+      }
     ];
 
     const container = document.getElementById('gallery-container');
@@ -174,9 +399,9 @@
           <p class="text-white/60 text-xs font-mono mb-1">${sector.code}</p>
           <h3 class="text-white text-3xl font-extrabold font-syne mb-1">${sector.name}</h3>
           <p class="text-white/90 text-sm font-light leading-snug mb-4">${sector.desc}</p>
-          <a href="http://localhost:5173/#directory" target="_blank" class="self-start px-4 py-1.5 rounded-full bg-white text-gray-900 font-syne font-bold text-xs hover:bg-gray-100 transition-colors shadow-md">
-            Inspect Sector ↗
-          </a>
+          <button onclick="handleSectorAction(${index})" class="self-start px-4 py-1.5 rounded-full bg-white text-gray-900 font-syne font-bold text-xs hover:bg-gray-100 transition-colors shadow-md">
+            ${index === 9 ? 'Book True Ticket 🎟️' : 'Inspect Sector ↗'}
+          </button>
         </div>
       `;
 
@@ -190,6 +415,60 @@
 
       container.appendChild(card);
     });
+
+    function handleSectorAction(idx) {
+      if (idx === 9) {
+        openTicketModal();
+      } else {
+        openModal(idx);
+      }
+    }
+
+    function openModal(idx) {
+      const s = sectors[idx];
+      document.getElementById('modal-img').src = s.img;
+      document.getElementById('modal-code').innerText = s.code;
+      document.getElementById('modal-title').innerText = s.name;
+      document.getElementById('modal-tagline').innerText = s.pricing;
+      document.getElementById('modal-desc').innerText = s.desc;
+      document.getElementById('modal-touch').innerText = s.touch;
+      document.getElementById('modal-pricing').innerText = s.pricing;
+      document.getElementById('modal-backdrop').classList.remove('hidden');
+      document.getElementById('modal-backdrop').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('modal-backdrop').classList.add('hidden');
+      document.getElementById('modal-backdrop').classList.remove('flex');
+    }
+
+    function openTicketModal() {
+      document.getElementById('ticket-modal-backdrop').classList.remove('hidden');
+      document.getElementById('ticket-modal-backdrop').classList.add('flex');
+    }
+
+    function closeTicketModal() {
+      document.getElementById('ticket-modal-backdrop').classList.add('hidden');
+      document.getElementById('ticket-modal-backdrop').classList.remove('flex');
+    }
+
+    function confirmBooking() {
+      const name = document.getElementById('tk-name').value || 'Aryan Mehra';
+      const event = document.getElementById('tk-event').value.split('|')[0];
+      const ref = 'TTB-' + Math.floor(100000 + Math.random() * 900000);
+
+      document.getElementById('tk-ref').innerText = ref;
+      document.getElementById('tk-res-name').innerText = name;
+      document.getElementById('tk-res-event').innerText = event;
+
+      document.getElementById('ticket-form-view').classList.add('hidden');
+      document.getElementById('ticket-success-view').classList.remove('hidden');
+    }
+
+    function resetTicketForm() {
+      document.getElementById('ticket-form-view').classList.remove('hidden');
+      document.getElementById('ticket-success-view').classList.add('hidden');
+    }
   </script>
 </body>
 </html>
